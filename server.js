@@ -35,6 +35,7 @@ app.get("/api/convert", (req, res) => {
 
   var numberRegex = /[0-9]*\.?\/?[0-9]*/;
   var number = input.match(numberRegex)[0];
+  number = eval(number)
 
   var newNumber;
   var newUnit;
