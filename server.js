@@ -33,7 +33,7 @@ app.get("/api/convert", (req, res) => {
   var unitRegex = /[a-z]*$/i;
   var unit = input.match(unitRegex)[0].toLowerCase();
 
-  var numberRegex = /[0-9]*\.?[0-9]*/;
+  var numberRegex = /[0-9]*\.?\/?[0-9]*/;
   var number = input.match(numberRegex)[0];
 
   var newNumber;
@@ -51,22 +51,24 @@ app.get("/api/convert", (req, res) => {
     newNumber = number * 0.62137;
     newUnit = "mi";
     string = `${number} kilometers converts to ${newNumber} miles`;
-  }else if (unit == "gal") {
+  } else if (unit == "gal") {
     newNumber = number * 3.78541;
     newUnit = "l";
     string = `${number} gallons converts to ${newNumber} liters`;
-  }else if (unit == "lbs") {
-    newNumber = number /2.20462;
+  } else if (unit == "lbs") {
+    newNumber = number / 2.20462;
     newUnit = "kg";
     string = `${number} pounds converts to ${newNumber} kilograms`;
-  }else if (unit == "mi") {
-    newNumber = number /0.62137;
+  } else if (unit == "mi") {
+    newNumber = number / 0.62137;
     newUnit = "km";
     string = `${number} miles converts to ${newNumber} kilometers`;
-  }else if (unit == "l") {
-    newNumber = number /0.62137;
+  } else if (unit == "l") {
+    newNumber = number / 3.78541;
     newUnit = "gal";
     string = `${number} miles converts to ${newNumber} kilometers`;
+  }else if (unit){
+    newUnit = "Invalid unit"
   }
 
   console.log(newNumber);
