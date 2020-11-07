@@ -29,16 +29,20 @@ fccTestingRoutes(app);
 //Routing for API
 app.get("/api/convert", (req, res) => {
   var input = req.query.input;
-  var input1 = "hvjh127.54kj25gb";
+  var input1 = "hvjh127.kj25gb";
 
   var unitRegex = /[a-z]*$/i;
   var unit = input1.match(unitRegex)[0];
   
-  var numberRegex = /[0-9]*\.[0-9]*/
-  var number = input1.match(numberRegex
-                           )
+  var numberRegex = /[0-9]*.[0-9]*/
+  var number = input1.match(numberRegex)
+  
+  var regex = /(\d*\.?\d+)\s?(\w+)/
+  var number1 = input1.match(regex)
+  
   console.log(unit);
   console.log(number)
+  console.log(number1)
 });
 
 apiRoutes(app);
