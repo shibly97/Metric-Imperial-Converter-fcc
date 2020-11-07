@@ -28,7 +28,11 @@ app.route('/')
 fccTestingRoutes(app);
 
 //Routing for API 
-apiRoutes(app);  
+// apiRoutes(app);  
+app.get('/api/convert',(req,res)=>{
+  
+  console.log("res.params")
+})
     
 //404 Not Found Middleware
 app.use(function(req, res, next) {
