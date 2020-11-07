@@ -83,6 +83,11 @@ suite('Unit Tests', function(){
     
     test('For Each Valid Unit Inputs', function(done) {
       //see above example for hint
+      var input = ['gal','l','mi','km','lbs','kg'];
+      var expect = ['l','gal','km','mi','kg','lbs'];
+      input.forEach(function(ele, i) {
+        assert.equal(convertHandler.getUnit(32 + ele), ele);
+      });
       done();
     });
     
