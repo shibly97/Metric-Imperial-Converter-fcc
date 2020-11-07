@@ -47,7 +47,11 @@ app.get("/api/convert", (req, res) => {
     newNumber = (number*2.20462262185 )
     newUnit = 'lbs'
     string = `${number} kilograms converts to ${newNumber} pounds`
-  }else if(unit == '')
+  }else if(unit == 'KM'){
+    newNumber = (number* 0.62137 )
+    newUnit = 'mi'
+    string = `${number} kilometers converts to ${newNumber} miles`
+  }
   
   console.log(newNumber)
   console.log(string)
