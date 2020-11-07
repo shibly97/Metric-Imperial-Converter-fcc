@@ -42,7 +42,7 @@ app.get("/api/convert", (req, res) => {
   console.log(number)
   
   if(unit=='KG'){
-    newNumber = (number/1)
+    newNumber = (number/)
   }
 });
 
