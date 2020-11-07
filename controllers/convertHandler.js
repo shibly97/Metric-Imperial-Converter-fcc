@@ -20,6 +20,7 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     var result;
+     result = input.match(inputRegex)[1]
     
     return result;
   };
