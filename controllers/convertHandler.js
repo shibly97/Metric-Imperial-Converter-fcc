@@ -5,11 +5,14 @@
 *       
 *       
 */
+var inputRegex = /[a-z]+[^a-z]+/ig
 
 function ConvertHandler() {
   
   this.getNum = function(input) {
     var result;
+    
+    
     
     return result;
   };
