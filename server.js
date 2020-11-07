@@ -27,62 +27,62 @@ app.route("/").get(function(req, res) {
 fccTestingRoutes(app);
 
 //Routing for API
-app.get("/api/convert", (req, res) => {
-  var input = req.query.input;
+// app.get("/api/convert", (req, res) => {
+//   var input = req.query.input;
 
-  var unitRegex = /[a-z]*$/i;
-  var unit = input.match(unitRegex)[0].toLowerCase();
+//   var unitRegex = /[a-z]*$/i;
+//   var unit = input.match(unitRegex)[0].toLowerCase();
 
-  var numberRegex = /[0-9]*\.?\/?[0-9]*/;
-  var number = input.match(numberRegex)[0];
-  number = eval(number);
+//   var numberRegex = /[0-9]*\.?\/?[0-9]*/;
+//   var number = input.match(numberRegex)[0];
+//   number = eval(number);
 
-  var newNumber;
-  var newUnit;
-  var string;
+//   var newNumber;
+//   var newUnit;
+//   var string;
 
-  console.log(unit);
-  console.log(number);
+//   console.log(unit);
+//   console.log(number);
 
-  if (unit == "kg") {
-    newNumber = number * 2.20462262185;
-    newUnit = "lbs";
-    string = `${number} kilograms converts to ${newNumber} pounds`;
-  } else if (unit == "km") {
-    newNumber = number * 0.62137;
-    newUnit = "mi";
-    string = `${number} kilometers converts to ${newNumber} miles`;
-  } else if (unit == "gal") {
-    newNumber = number * 3.78541;
-    newUnit = "l";
-    string = `${number} gallons converts to ${newNumber} liters`;
-  } else if (unit == "lbs") {
-    newNumber = number / 2.20462;
-    newUnit = "kg";
-    string = `${number} pounds converts to ${newNumber} kilograms`;
-  } else if (unit == "mi") {
-    newNumber = number / 0.62137;
-    newUnit = "km";
-    string = `${number} miles converts to ${newNumber} kilometers`;
-  } else if (unit == "l") {
-    newNumber = number / 3.78541;
-    newUnit = "gal";
-    string = `${number} liters converts to ${newNumber} gallons`;
-  } else if (unit) {
-    newUnit = "Invalid unit";
-  }
+  // if (unit == "kg") {
+  //   newNumber = number * 2.20462262185;
+  //   newUnit = "lbs";
+  //   string = `${number} kilograms converts to ${newNumber} pounds`;
+  // } else if (unit == "km") {
+  //   newNumber = number * 0.62137;
+  //   newUnit = "mi";
+  //   string = `${number} kilometers converts to ${newNumber} miles`;
+  // } else if (unit == "gal") {
+  //   newNumber = number * 3.78541;
+  //   newUnit = "L";
+  //   string = `${number} gallons converts to ${newNumber} liters`;
+  // } else if (unit == "lbs") {
+  //   newNumber = number / 2.20462;
+  //   newUnit = "kg";
+  //   string = `${number} pounds converts to ${newNumber} kilograms`;
+  // } else if (unit == "mi") {
+  //   newNumber = number / 0.62137;
+  //   newUnit = "km";
+//     string = `${number} miles converts to ${newNumber} kilometers`;
+//   } else if (unit == "l") {
+//     newNumber = number / 3.78541;
+//     newUnit = "gal";
+//     string = `${number} liters converts to ${newNumber} gallons`;
+//   } else if (unit) {
+//     newUnit = "Invalid unit";
+//   }
 
-  console.log(newNumber);
-  console.log(string);
+//   console.log(newNumber);
+//   console.log(string);
 
-  res.json({
-    initNum: number,
-    initUnit: unit,
-    returnNum: newNumber,
-    returnUnit: newUnit,
-    string: string
-  });
-});
+//   res.json({
+//     initNum: number,
+//     initUnit: unit,
+//     return_Num: newNumber,
+//     return_Unit: newUnit,
+//     string: string
+//   });
+// });
 
 apiRoutes(app);
 
