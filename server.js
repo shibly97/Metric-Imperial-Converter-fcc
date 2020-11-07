@@ -30,7 +30,10 @@ fccTestingRoutes(app);
 //Routing for API 
 app.get('/api/convert',(req,res)=>{
   
-  console.log(req.params)
+  var input = req.query.input
+  var regex = /[a-z]*/
+  var unit = regex.test()
+  console.log(unit)
 })
 
 apiRoutes(app);  
