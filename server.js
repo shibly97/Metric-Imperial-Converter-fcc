@@ -31,10 +31,13 @@ fccTestingRoutes(app);
 app.get('/api/convert',(req,res)=>{
   
   var input = req.query.input
-  var input1 = '127.25gb'
+  var input1 = '127km.25gb'
 
-  var regex = /[a-z]/gi
-  var unit = input1.match(regex)
+  var regex = /[a-z]*/gi
+  var units = input1.match(regex)
+  var unit = units.filter((el)=>{
+    return el !== ''
+  })
   console.log(unit)
 })
 
