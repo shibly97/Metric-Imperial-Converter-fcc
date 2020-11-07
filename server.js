@@ -35,7 +35,7 @@ app.get("/api/convert", (req, res) => {
 
   var numberRegex = /[0-9]*\.?\/?[0-9]*/;
   var number = input.match(numberRegex)[0];
-  number = eval(number)
+  number = eval(number);
 
   var newNumber;
   var newUnit;
@@ -67,15 +67,21 @@ app.get("/api/convert", (req, res) => {
   } else if (unit == "l") {
     newNumber = number / 3.78541;
     newUnit = "gal";
-    string = `${number} miles converts to ${newNumber} kilometers`;
-  }else if (unit){
-    newUnit = "Invalid unit"
+    string = `${number} liters converts to ${newNumber} gallons`;
+  } else if (unit) {
+    newUnit = "Invalid unit";
   }
 
   console.log(newNumber);
   console.log(string);
-  
-  res.json({initNum : number, initUnit : unit, returnNum: newNumber, returnUnit: newNumber, string: string})
+
+  res.json({
+    initNum: number,
+    initUnit: unit,
+    returnNum: newNumber,
+    returnUnit: newUnit,
+    string: string
+  });
 });
 
 apiRoutes(app);
