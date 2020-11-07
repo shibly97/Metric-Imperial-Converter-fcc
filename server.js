@@ -74,6 +74,8 @@ app.get("/api/convert", (req, res) => {
 
   console.log(newNumber);
   console.log(string);
+  
+  res.json({initNum : number, initUnit : unit, returnNum: newNumber, returnUnit: newNumber, string: string})
 });
 
 apiRoutes(app);
