@@ -5,14 +5,15 @@
 *       
 *       
 */
-var inputRegex = /[a-z]+[^a-z]+/ig
+let inputRegex = /[a-z]+|[^a-z]+/gi
 
 function ConvertHandler() {
   
   this.getNum = function(input) {
     var result;
     
-    
+    console.log(input.match(inputRegex))
+    result = input.match(inputRegex)[0]
     
     return result;
   };
