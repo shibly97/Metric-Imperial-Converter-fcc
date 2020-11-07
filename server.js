@@ -31,13 +31,19 @@ app.get("/api/convert", (req, res) => {
   var input = req.query.input;
 
   var unitRegex = /[a-z]*$/i;
-  var unit = input.match(unitRegex)[0];
+  var unit = input.match(unitRegex)[0].toUpperCase();
   
   var numberRegex = /[0-9]*\.?[0-9]*/
   var number = input.match(numberRegex)[0]
   
+  var newNumber = 
+  
   console.log(unit);
   console.log(number)
+  
+  if(unit=='KG'){
+    newNumber = (number/1)
+  }
 });
 
 apiRoutes(app);
