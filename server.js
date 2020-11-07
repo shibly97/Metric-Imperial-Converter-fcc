@@ -32,7 +32,7 @@ app.get('/api/convert',(req,res)=>{
   
   var input = req.query.input
   var regex = /[a-z]*/
-  var unit = regex.test()
+  var unit = input.match(regex)
   console.log(unit)
 })
 
