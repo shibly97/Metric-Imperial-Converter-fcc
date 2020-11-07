@@ -36,14 +36,21 @@ app.get("/api/convert", (req, res) => {
   var numberRegex = /[0-9]*\.?[0-9]*/
   var number = input.match(numberRegex)[0]
   
-  var newNumber = 
+  var newNumber 
+  var newUnit
+  var string
   
   console.log(unit);
   console.log(number)
   
   if(unit=='KG'){
-    newNumber = (number/)
-  }
+    newNumber = (number*2.20462262185 )
+    newUnit = 'lbs'
+    string = `${number} kilograms converts to ${newNumber} pounds`
+  }else if(unit == '')
+  
+  console.log(newNumber)
+  console.log(string)
 });
 
 apiRoutes(app);
