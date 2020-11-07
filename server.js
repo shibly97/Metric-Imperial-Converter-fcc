@@ -31,30 +31,30 @@ app.get("/api/convert", (req, res) => {
   var input = req.query.input;
 
   var unitRegex = /[a-z]*$/i;
-  var unit = input.match(unitRegex)[0].toUpperCase();
-  
-  var numberRegex = /[0-9]*\.?[0-9]*/
-  var number = input.match(numberRegex)[0]
-  
-  var newNumber 
-  var newUnit
-  var string
-  
+  var unit = input.match(unitRegex)[0].toLowerCase();
+
+  var numberRegex = /[0-9]*\.?[0-9]*/;
+  var number = input.match(numberRegex)[0];
+
+  var newNumber;
+  var newUnit;
+  var string;
+
   console.log(unit);
-  console.log(number)
-  
-  if(unit=='KG'){
-    newNumber = (number*2.20462262185 )
-    newUnit = 'lbs'
-    string = `${number} kilograms converts to ${newNumber} pounds`
-  }else if(unit == 'KM'){
-    newNumber = (number* 0.62137 )
-    newUnit = 'mi'
-    string = `${number} kilometers converts to ${newNumber} miles`
+  console.log(number);
+
+  if (unit == "kg") {
+    newNumber = number * 2.20462262185;
+    newUnit = "lbs";
+    string = `${number} kilograms converts to ${newNumber} pounds`;
+  } else if (unit == "km") {
+    newNumber = number * 0.62137;
+    newUnit = "mi";
+    string = `${number} kilometers converts to ${newNumber} miles`;
   }
-  
-  console.log(newNumber)
-  console.log(string)
+
+  console.log(newNumber);
+  console.log(string);
 });
 
 apiRoutes(app);
