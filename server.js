@@ -56,9 +56,17 @@ app.get("/api/convert", (req, res) => {
     newUnit = "l";
     string = `${number} gallons converts to ${newNumber} liters`;
   }else if (unit == "lbs") {
-    newNumber = number *;
-    newUnit = "mi";
-    string = `${number} kilometers converts to ${newNumber} miles`;
+    newNumber = number /2.20462;
+    newUnit = "kg";
+    string = `${number} pounds converts to ${newNumber} kilograms`;
+  }else if (unit == "mi") {
+    newNumber = number /0.62137;
+    newUnit = "km";
+    string = `${number} miles converts to ${newNumber} kilometers`;
+  }else if (unit == "l") {
+    newNumber = number /0.62137;
+    newUnit = "gal";
+    string = `${number} miles converts to ${newNumber} kilometers`;
   }
 
   console.log(newNumber);
