@@ -14,10 +14,18 @@ function ConvertHandler() {
     
     result = input.match(inputRegex)[0]
     
-    if(result.includes)
+    if(result.toString().includes('/')){
+      let values = result.toString().split('/')
+      if(values !== 2){
+        return 'invalid number'
+      }
+      values[0] = parseFloat(values[0])
+      values[1] = parseFloat(values[1])
+      result = (values[0]/values[1]).toFixed(5)
+    }
     
     if(isNaN(result)){
-      result = 'invalid number'
+      return 'invalid number'
     }
     
     return result;
