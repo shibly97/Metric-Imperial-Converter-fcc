@@ -44,7 +44,11 @@ function ConvertHandler() {
     var validUnits = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     
     if(!validUnits.includes(result)){
-      return 'invalid unit'
+      if(!validUnits.includes(input.match(inputRegex)[0])){
+        result = input.match(inputRegex)[0]
+      }else{
+        return 'invalid unit' 
+      }
     }
     
     return result;
