@@ -39,13 +39,18 @@ suite('Functional Tests', function() {
           .query({input:'32g'})
           .end(function(err,res){
             assert.equal(res.body, 'invalid unit')
+           done();
         })
-        //done();
+       
       });
       
       test('Convert 3/7.2/4kg (invalid number)', function(done) {
-        
-        //done();
+        chai.request(server)
+          .get('/api/convert')
+          .query({input:'3/7.2/4kg'})
+          .end(function(err,res){
+            assert.equal(res.body, 'invalid number')
+        done();
       });  
       
       test('Convert 3/7.2/4kilomegagram (invalid number and unit)', function(done) {

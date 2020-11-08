@@ -26,8 +26,16 @@ module.exports = function (app) {
       
       //res.json
     
+    if(initUnit == 'invalid unit' && initNum == 'invalid number'){
+      res.json('invalid number and unit')
+    }
+    
     if (initUnit == 'invalid unit'){
       res.json('invalid unit')
+    }
+    
+    if (initNum == 'invalid number'){
+      res.json('invalid number')
     }
     
     res.json(
