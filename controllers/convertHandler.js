@@ -12,8 +12,9 @@ function ConvertHandler() {
   this.getNum = function(input) {
     var result;
     
-    console.log(input.match(inputRegex))
     result = input.match(inputRegex)[0]
+    
+    if(result.includes)
     
     if(isNaN(result)){
       result = 'invalid number'
