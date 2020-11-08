@@ -26,6 +26,8 @@ module.exports = function (app) {
       
       //res.json
     
+    
+    
     res.json(
       {initNum: initNum,
      initUnit: initUnit,
