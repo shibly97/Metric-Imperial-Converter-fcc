@@ -29,9 +29,9 @@ function ConvertHandler() {
     var result;
     
     if(initUnit === 'gal' || initUnit === 'GAL'){
-      result = (initNum * galToL).toFixed(5)
+      result = 'l'
     }else if(initUnit === 'l' || initUnit === 'L'){
-      result = (initNum/galToL).toFixed(5)
+      result = 'gal'
     }
     
     
