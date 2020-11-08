@@ -25,7 +25,7 @@ function ConvertHandler() {
     var validUnits = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     
     if(!validUnits.includes(result)){
-      return 'Invalid unit'
+      return 'invalid unit'
     }
     
     return result;
@@ -35,7 +35,7 @@ function ConvertHandler() {
     var result;
     
     if(initUnit === 'gal' || initUnit === 'GAL'){
-      result = 'l'
+      result = 'L'
     }else if(initUnit === 'l' || initUnit === 'L'){
       result = 'gal'
     }
