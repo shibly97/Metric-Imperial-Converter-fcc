@@ -34,7 +34,7 @@ suite('Functional Tests', function() {
       });
       
       test('Convert 32g (invalid input unit)', function(done) {
-        
+        chai.request
         //done();
       });
       
