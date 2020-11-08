@@ -22,7 +22,7 @@ function ConvertHandler() {
     
     if(result.toString().includes('/')){
       let values = result.toString().split('/')
-      if(values !== 2){
+      if(values.length !== 2){
         return 'invalid number'
       }
       values[0] = parseFloat(values[0])
