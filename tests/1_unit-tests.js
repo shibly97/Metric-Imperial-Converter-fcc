@@ -49,7 +49,9 @@ suite('Unit Tests', function(){
     });
     
     test('No Numerical Input', function(done) {
-      
+       var input = '32/4.5/4';
+      assert.equal(convertHandler.getNum(input),'invalid number');
+      done();
       
       //done();
     }); 

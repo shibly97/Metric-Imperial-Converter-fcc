@@ -59,7 +59,7 @@ suite('Functional Tests', function() {
           .query({input:'3/7.2/4kilomegagram'})
           .end(function(err,res){
             assert.equal(res.body, 'invalid number and unit')
-        //done();
+        done();
       });
       
       test('Convert kg (no number)', function(done) {
@@ -72,3 +72,7 @@ suite('Functional Tests', function() {
   });
 
 });
+    
+     });
+      
+    });
