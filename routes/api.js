@@ -26,7 +26,9 @@ module.exports = function (app) {
       
       //res.json
     
-    
+    if (initUnit == 'invalid unit'){
+      res.json('invalid unit')
+    }
     
     res.json(
       {initNum: initNum,

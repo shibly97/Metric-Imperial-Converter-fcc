@@ -38,8 +38,9 @@ suite('Unit Tests', function(){
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      
-      //done();
+      var input = '32/4.5/4';
+      assert.equal(convertHandler.getNum(input),'invalid number');
+      done();
     });
     
     test('No Numerical Input', function(done) {
@@ -63,7 +64,7 @@ suite('Unit Tests', function(){
     test('Unknown Unit Input', function(done) {
       var input = '32g'
       assert.equal(convertHandler.getUnit(input),"Invalid unit")
-      //done();
+      done();
     });  
     
   });
@@ -103,36 +104,35 @@ suite('Unit Tests', function(){
       var input = [5, 'l'];
       var expected = 1.32086;
       assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
-      //done();
+      done();
     });
     
     test('Mi to Km', function(done) {
       var input = [5, 'mi'];
       var expected = 8.04672;
       assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
-      //done();
+      done();
     });
     
     test('Km to Mi', function(done) {
       var input = [5, 'km'];
       var expected = 3.10686;
-      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
-      //done();
-      //done();
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 toleranc
+      done();
     });
     
     test('Lbs to Kg', function(done) {
       var input = [5, 'lbs'];
       var expected = 2.26796;
       assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
-      //done();
+      done();
     });
     
     test('Kg to Lbs', function(done) {
       var input = [5, 'kg'];
       var expected = 11.0231;
       assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
-      //done();
+      done();
     });
     
   });

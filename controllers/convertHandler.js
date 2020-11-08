@@ -15,6 +15,10 @@ function ConvertHandler() {
     console.log(input.match(inputRegex))
     result = input.match(inputRegex)[0]
     
+    if(isNaN(result)){
+      result = 'invalid number'
+    }
+    
     return result;
   };
   
