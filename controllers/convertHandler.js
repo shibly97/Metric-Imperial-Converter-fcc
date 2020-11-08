@@ -27,7 +27,7 @@ function ConvertHandler() {
       }
       values[0] = parseFloat(values[0])
       values[1] = parseFloat(values[1])
-      result = (values[0]/values[1]).toFixed(5)
+      result = parseFloat(values[0]/values[1]).toFixed(5)
     }
     
     if(isNaN(result)){
@@ -136,7 +136,7 @@ function ConvertHandler() {
       result = (initNum/miToKm).toFixed(5)
     }
     
-    return result;
+    return parseFloat(result);
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
