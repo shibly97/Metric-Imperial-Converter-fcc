@@ -20,7 +20,13 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     var result;
-     result = input.match(inputRegex)[1]
+    result = input.match(inputRegex)[1]
+    
+    var validUnits = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
+    
+    if(!validUnits.includes(result)){
+      return 'Invalid unit'
+    }
     
     return result;
   };
