@@ -44,7 +44,11 @@ function ConvertHandler() {
     const miToKm = 1.60934;
     var result;
     
-    
+    if(initUnit === 'gal' || initUnit === 'GAL'){
+      result = (initNum * galToL).toFixed(5)
+    }else if(initUnit === 'l' || initUnit === 'L'){
+      result = (initNum / galToL)
+    }
     
     return result;
   };
