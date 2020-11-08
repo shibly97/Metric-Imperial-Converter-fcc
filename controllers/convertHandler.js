@@ -85,7 +85,7 @@ function ConvertHandler() {
     switch (unit){
       case 'gal':
       case 'GAL':
-        result = 'gallons(s)';
+        result = 'gallon(s)';
         break;
       case 'l':
       case 'L':
