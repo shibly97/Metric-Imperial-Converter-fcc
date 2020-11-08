@@ -34,6 +34,12 @@ function ConvertHandler() {
       result = 'gal'
     }
     
+    if(initUnit === 'lbs' || initUnit === 'LBS'){
+      result = 'kg'
+    }else if(initUnit === 'kg' || initUnit === 'KG'){
+      result = 'lbs'
+    }
+    
     
     return result;
   };
@@ -54,6 +60,12 @@ function ConvertHandler() {
       result = (initNum * galToL).toFixed(5)
     }else if(initUnit === 'l' || initUnit === 'L'){
       result = (initNum/galToL).toFixed(5)
+    }
+    
+    if(initUnit === 'lbs' || initUnit === 'LBS'){
+      result = (initNum * lbsToKg).toFixed(5)
+    }else if(initUnit === 'kg' || initUnit === 'KG'){
+      result = (initNum/lbsToKg).toFixed(5)
     }
     
     return result;
