@@ -14,6 +14,12 @@ function ConvertHandler() {
     
     result = input.match(inputRegex)[0]
     
+    let numRegex = /\d/
+    
+    if(numRegex.test(result) === false){
+      result = 1
+    }
+    
     if(result.toString().includes('/')){
       let values = result.toString().split('/')
       if(values !== 2){

@@ -23,17 +23,22 @@ suite('Unit Tests', function(){
     });
     
     test('Decimal Input', function(done) {
-      
-      //done();
+      var input = '32.4kg';
+      assert.equal(convertHandler.getNum(input),32.4);
+      done();
     });
     
     test('Fractional Input', function(done) {
-      
+      var input = '32/4L';
+      assert.equal(convertHandler.getNum(input),8);
+      done();
       //done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      
+      var input = '27/5.4L';
+      assert.equal(convertHandler.getNum(input),5);
+      done();
       //done();
     });
     
