@@ -82,6 +82,33 @@ function ConvertHandler() {
   this.spellOutUnit = function(unit) {
     var result;
     
+    switch (unit){
+      case 'gal':
+      case 'GAL':
+        result = 'gallons(s)';
+        break;
+      case 'l':
+      case 'L':
+        result = 'liter(s)';
+        break;
+      case 'lbs':
+      case 'LBS':
+        result = 'pound(s)';
+        break;
+      case 'kg':
+      case 'KG':
+        result = 'kilogram(s)';
+        break;
+      case 'mi':
+      case 'MI':
+        result = 'mile(s)';
+        break;
+      case 'km':
+      case 'KM':
+        result = 'kilometer(s)';
+        break;
+    }
+     
     return result;
   };
   
@@ -114,6 +141,8 @@ function ConvertHandler() {
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result;
+    
+    
     
     return result;
   };
